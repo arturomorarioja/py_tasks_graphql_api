@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "8008c1f0-d04f-42e2-9bb7-514b57b26f26",
+		"name": "Tasks GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11087769"
+	},
+	"item": [
+		{
+			"name": "query tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"{ tasks { title completed } }\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/tasks",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
