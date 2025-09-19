@@ -1,11 +1,13 @@
 # Tasks
-GraphQL API example
+GraphQL API example.
 
 ## Usage
 
 ### General
 Endpoint: `<server>/tasks`
+
 Method: `POST`
+
 Headers: `Content-Type`: `application/json`
 
 ### Body
