@@ -22,12 +22,120 @@
 					"raw": "{\r\n    \"query\": \"{ tasks { title completed } }\"\r\n}"
 				},
 				"url": {
-					"raw": "{{BASE_URL}}/tasks",
+					"raw": "{{BASE_URL}}/graphql",
 					"host": [
 						"{{BASE_URL}}"
 					],
 					"path": [
-						"tasks"
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"query($t:String!){ task(title:$t){ title completed } }\",\r\n    \"variables\": { \"t\": \"Learn Graphene\" }\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"mutation{ addTask(title:\\\"Buy groceries\\\"){ success task{ title completed} } }\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"mutation{ updateTask(title:\\\"Buy groceries\\\", newTitle:\\\"Buy groceries and snacks\\\", completed:true){ success task{ title completed} } }\"\r\n}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"query\": \"mutation{ deleteTask(title:\\\"Test the API\\\"){ success deletedTask{ title completed } } }\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/graphql",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"graphql"
 					]
 				}
 			},

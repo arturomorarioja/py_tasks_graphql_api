@@ -4,7 +4,7 @@ GraphQL API example.
 ## Usage
 
 ### General
-Endpoint: `<server>/tasks`
+Endpoint: `<server>/graphql`
 
 Method: `POST`
 

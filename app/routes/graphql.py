@@ -2,10 +2,10 @@ from flask import Blueprint, request, jsonify
 from ..schema import schema
 
 
-tasks_bp = Blueprint('tasks', __name__, url_prefix='/tasks')
+graphql_bp = Blueprint('graphql', __name__, url_prefix='/graphql')
 
 
-@tasks_bp.post('')
+@graphql_bp.post('')
 def graphql_tasks():
     # Parse incoming JSON body
     payload = request.get_json(silent=True) or {}
