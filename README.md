@@ -1,14 +1,17 @@
 # Tasks
-GraphQL API example.
+GraphQL API server example.
+
+It uses an in-memory data store, so the data resets after each server restart.
 
 ## Usage
 
+### Start
+Running the API: `python run.py`
+
 ### General
-Endpoint: `<server>/graphql`
-
-Method: `POST`
-
-Headers: `Content-Type`: `application/json`
+- Endpoint: `<server>/graphql`
+- Method: `POST`
+- Headers: `Content-Type`: `application/json`
 
 ### Body
 
@@ -55,6 +58,8 @@ Delete a task
 
 ### Testing
 The folder `postman` includes a Postman collection and environment to test the API.
+
+Notice that, for demonstration purposes, queries with parameters have the latter defined both as body raw parameters and as GraphQL parameters with GraphQL variables.
 
 ## Tools
 Flask / Graphene / Python
