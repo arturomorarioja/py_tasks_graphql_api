@@ -45,8 +45,11 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"query\": \"query($t:String!){ task(title:$t){ title completed } }\",\r\n    \"variables\": { \"t\": \"Learn Graphene\" }\r\n}"
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetTask($t: String!) {\r\n  task(title: $t) {\r\n    title\r\n    completed\r\n  }\r\n}",
+						"variables": "{\r\n  \"t\": \"Learn Graphene\"\r\n}"
+					}
 				},
 				"url": {
 					"raw": "{{BASE_URL}}/graphql",
@@ -72,8 +75,11 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"query\": \"mutation{ addTask(title:\\\"Buy groceries\\\"){ success task{ title completed} } }\"\r\n}"
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddTask($title: String!) {\r\n  addTask(title: $title) {\r\n    success\r\n    task {\r\n      title\r\n      completed\r\n    }\r\n  }\r\n}",
+						"variables": "{\r\n  \"title\": \"Buy groceries\"\r\n}"
+					}
 				},
 				"url": {
 					"raw": "{{BASE_URL}}/graphql",
@@ -99,8 +105,11 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"query\": \"mutation{ updateTask(title:\\\"Buy groceries\\\", newTitle:\\\"Buy groceries and snacks\\\", completed:true){ success task{ title completed} } }\"\r\n}"
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation UpdateTask($title: String!, $newTitle: String!, $completed: Boolean!) {\r\n  updateTask(title: $title, newTitle: $newTitle, completed: $completed) {\r\n    success\r\n    task {\r\n      title\r\n      completed\r\n    }\r\n  }\r\n}",
+						"variables": "{\r\n  \"title\": \"Buy groceries\",\r\n  \"newTitle\": \"Buy groceries and snacks\",\r\n  \"completed\": true\r\n}"
+					}
 				},
 				"url": {
 					"raw": "{{BASE_URL}}/graphql",
@@ -126,8 +135,11 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"query\": \"mutation{ deleteTask(title:\\\"Test the API\\\"){ success deletedTask{ title completed } } }\"\r\n}\r\n"
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation DeleteTask($title: String!) {\r\n  deleteTask(title: $title) {\r\n    success\r\n    deletedTask {\r\n      title\r\n      completed\r\n    }\r\n  }\r\n}",
+						"variables": "{\r\n  \"title\": \"Test the API\"\r\n}"
+					}
 				},
 				"url": {
 					"raw": "{{BASE_URL}}/graphql",
