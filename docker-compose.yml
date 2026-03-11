@@ -1,0 +1,6 @@
+services:
+  tasks-api:
+    build: .
+    container_name: py-tasks-graphql-api
+    ports:
+      - '5000:5000'

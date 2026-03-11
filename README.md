@@ -5,8 +5,14 @@ It uses an in-memory data store, so the data resets after each server restart.
 
 ## Usage
 
-### Start
-Running the API: `python run.py`
+**Docker**
+
+- Build the container: `docker compose up -d --build`
+- Stop the container `docker compose down`
+
+**Python**
+
+- Start the API: `python run.py`
 
 ### General
 - Endpoint: `<server>/graphql`
@@ -65,4 +71,4 @@ Notice that, for demonstration purposes, queries with parameters have the latter
 Flask / Graphene / Python
 
 ## Author
-ChatGPT 5, prompted by Arturo Mora-Rioja, based on [Kesha Williams' repo](https://github.com/LinkedInLearning/programming-foundations-apis-and-web-services-3811153/tree/main/03_02) from her LinkedIn Learning course [*Programming Foundations: APIs and Web Services*](https://www.linkedin.com/learning/programming-foundations-apis-and-web-services-27993033).
+ChatGPT 5 and 5.2, prompted by Arturo Mora-Rioja, based on [Kesha Williams' repo](https://github.com/LinkedInLearning/programming-foundations-apis-and-web-services-3811153/tree/main/03_02) from her LinkedIn Learning course [*Programming Foundations: APIs and Web Services*](https://www.linkedin.com/learning/programming-foundations-apis-and-web-services-27993033).
